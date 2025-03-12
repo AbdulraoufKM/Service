@@ -66,7 +66,7 @@ public class NewsArticleController {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body( new ApiResponse("Failed to delete news article"));
     }
 
-    @PutMapping("/publish")
+    @PutMapping("/publish/{id}")
     public ResponseEntity publishNewsArticle(@PathVariable String id) {
         Boolean isPublish = newsArticleService.publishNewsArticle(id);
         if (isPublish) {
